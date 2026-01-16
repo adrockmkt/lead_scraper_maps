@@ -201,6 +201,21 @@ Este projeto utiliza a **Google Places API**, que possui modelo de cobrança por
 
 - Nunca versionar ou expor a chave em repositórios públicos
 
+### 📊 Cotas gratuitas e modelo de cobrança da Google Maps API
+
+Este projeto utiliza exclusivamente endpoints da **Google Places API** (Text Search e Place Details), que possuem **cota gratuita mensal** oferecida pela Google Maps Platform.
+
+Atualmente, a Google disponibiliza:
+
+- **Places API – Text Search**: até **5.000 requisições/mês sem custo**
+- **Places Details (campos básicos)**: até **5.000 requisições/mês sem custo**
+
+As cotas são **renovadas mensalmente** e são **independentes por tipo de requisição (SKU)**.
+
+No cenário de uso deste projeto — execução manual, escopo regional (Curitiba e Região Metropolitana), cache persistente em SQLite e execução por nicho — é possível operar **integralmente dentro do free tier**, sem geração de cobrança.
+
+Mesmo assim, recomenda-se fortemente a criação de um **budget mensal** no Google Cloud Console para monitoramento e alertas preventivos.
+
 ### ⚠️ Observação Importante
 
 O projeto foi desenhado para **execução consciente e incremental**. Ele não deve ser utilizado como crawler massivo ou contínuo.
