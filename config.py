@@ -126,3 +126,35 @@ SCORE_MINIMO_APROVACAO = 70
 OUTPUT_LEADS_QUALIFICADOS = "outputs/leads_qualificados.csv"
 OUTPUT_LEADS_SEM_EMAIL = "outputs/leads_sem_email.csv"
 OUTPUT_LEADS_DESCARTADOS = "outputs/leads_descartados.csv"
+
+# =========================================
+# FASE 2 - OTIMIZAÇÃO DE CUSTO E PERFORMANCE
+# =========================================
+
+# Limites dinâmicos por nicho (max resultados por nicho)
+LIMITE_POR_NICHO = {
+    "dedetizadora": 50,
+    "desentupidora": 50,
+    "guincho": 40,
+    "assistência técnica ar condicionado": 30,
+    "instalação ar condicionado": 30,
+    "manutenção ar condicionado": 30,
+    "impermeabilização": 25,
+    "reforma especializada": 20,
+    "reparo de telhado": 25,
+    "hidráulica predial": 35,
+    "elétrica predial": 35
+}
+
+# Limite padrão para nichos não especificados
+LIMITE_PADRAO_POR_NICHO = 30
+
+# Limites por bairro (max resultados por bairro por nicho)
+LIMITE_POR_BAIRRO = 15
+
+# Custo estimado por chamada da API (em USD)
+CUSTO_TEXT_SEARCH = 0.005  # ~$5 por 1000 chamadas
+CUSTO_PLACE_DETAILS = 0.017  # ~$17 por 1000 chamadas
+
+# Métricas de performance
+METRICS_OUTPUT_PATH = "outputs/metrics_report.json"
