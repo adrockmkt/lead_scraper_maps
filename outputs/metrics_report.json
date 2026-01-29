@@ -1,9 +1,9 @@
 {
   "resumo_execucao": {
-    "inicio": "2026-01-29T13:50:09.797910",
-    "fim": "2026-01-29T13:50:09.806302",
-    "duracao_segundos": 0.008392095565795898,
-    "duracao_formatada": "0.0s"
+    "inicio": "2026-01-29T17:04:48.867340",
+    "fim": "2026-01-29T17:04:48.951202",
+    "duracao_segundos": 0.0838620662689209,
+    "duracao_formatada": "0.1s"
   },
   "api_calls": {
     "text_search": 0,
@@ -12,7 +12,7 @@
   },
   "leads": {
     "coletados": 0,
-    "processados": 20,
+    "processados": 74,
     "qualificados": 0,
     "sem_email": 0,
     "descartados": 0,
