@@ -24,16 +24,28 @@ Entregas:
 
 ---
 
-## 🟡 Fase 2 — Otimização de Custo e Performance
+## 🟢 Fase 2 — Otimização de Custo e Performance (Status: Concluída)
 
 Objetivo: reduzir chamadas desnecessárias à API e acelerar execuções recorrentes.
 
-Planejado:
-- [ ] Modo `DRY_RUN` (simulação sem chamadas à API)
-- [ ] Limite dinâmico por nicho / bairro
-- [ ] Controle de execução por flags (CLI args)
-- [ ] Métricas de execução (tempo por nicho, volume por bairro)
-- [ ] Relatório resumido de consumo estimado da API
+Entregas:
+- [x] Modo `DRY_RUN` (simulação sem chamadas à API)
+- [x] Limite dinâmico por nicho / bairro
+- [x] Controle de execução por flags (CLI args)
+- [x] Métricas de execução (tempo por nicho, volume por bairro)
+- [x] Relatório resumido de consumo estimado da API
+
+Arquivos implementados:
+- `main_enhanced.py` - Pipeline com CLI e controle granular
+- `services/places_client_enhanced.py` - Cliente com dry-run e limites
+- `services/metrics.py` - Coleta e análise de métricas
+- `test_fase2.py` - Suite de testes para validação
+- `FASE2_DOCUMENTATION.md` - Documentação completa
+
+Uso:
+```bash
+python main_enhanced.py --dry-run --nichos "dedetizadora,desentupidora" --limite-global 25 --verbose
+```
 
 ---
 

@@ -57,19 +57,35 @@ lead_scraper_maps/
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
-├── main.py
-├── config.py
+├── main.py                      # Pipeline original
+├── main_enhanced.py             # Pipeline otimizado (Fase 2)
+├── config.py                    # Configurações do projeto
+├── ROADMAP.md                   # Roadmap de evoluções
 ├── services/
-│   ├── places_client.py
-│   ├── site_crawler.py
-│   ├── scoring.py
-│   └── storage.py
+│   ├── places_client.py         # Cliente Google Places
+│   ├── places_client_enhanced.py # Cliente otimizado com dry-run
+│   ├── site_crawler.py          # Web scraping de sites
+│   ├── scoring.py               # Sistema de scoring
+│   ├── storage.py               # Cache e persistência
+│   └── metrics.py               # Sistema de métricas (Fase 2)
 ├── data/
-│   └── sqlite_cache.db
-└── outputs/
-    ├── leads_qualificados.csv
-    ├── leads_sem_email.csv
-    └── leads_descartados.csv
+│   └── sqlite_cache.db         # Cache local
+├── outputs/
+│   ├── leads_qualificados.csv
+│   ├── leads_sem_email.csv
+│   ├── leads_descartados.csv
+│   └── metrics_report.json      # Relatórios (Fase 2)
+├── test_fase2.py               # Testes Fase 2
+├── FASE2_DOCUMENTATION.md      # Documentação completa
+├── FASE2_SUMMARY.md           # Resumo da implementação
+└── .specify/                   # SpeckIt governance
+    ├── memory/
+    │   └── constitution.md
+    ├── scripts/
+    ├── specs/
+    │   └── 002-fase2-optimization/
+    │       └── spec.md
+    └── templates/
 ```
 
 ---
@@ -112,10 +128,36 @@ SQLITE_DB_PATH=data/sqlite_cache.db
 
 ## ▶️ Execução
 
+### Pipeline Original
+
 Rodar o pipeline completo:
 
 ```bash
 python main.py
+```
+
+### Pipeline Otimizado (Fase 2)
+
+Com suporte a controle avançado e modo de simulação:
+
+```bash
+python main_enhanced.py --help
+```
+
+**Exemplos de uso:**
+
+```bash
+# Simulação sem chamadas à API
+python main_enhanced.py --dry-run --verbose
+
+# Executar nichos específicos com limites
+python main_enhanced.py --nichos "dedetizadora,desentupidora" --limite-global 25
+
+# Controle granular por bairro
+python main_enhanced.py --bairros "Batel,Centro" --limite-por-nicho 10
+
+# Gerar relatório completo
+python main_enhanced.py --dry-run --gerar-relatorio --verbose
 ```
 
 Na primeira execução:
@@ -125,6 +167,7 @@ Na primeira execução:
 Execuções seguintes:
 - Muito mais rápidas
 - Uso intensivo de cache
+- Métricas detalhadas disponíveis
 
 ---
 
@@ -224,7 +267,17 @@ A responsabilidade pelo uso da API, custos gerados e conformidade com os termos 
 
 ---
 
-## 🚀 Evoluções Planejadas
+## 🚀 Evoluções Implementadas
+
+### ✅ Fase 2 - Otimização de Custo e Performance (Concluída)
+
+- **Modo DRY_RUN**: Simulação completa sem chamadas à API
+- **Limites Dinâmicos**: Controle por nicho e bairro
+- **Interface CLI**: Flags para controle de execução
+- **Sistema de Métricas**: Tempo por nicho, volume por bairro
+- **Relatórios de Custo**: Consumo estimado da API
+
+### 🔮 Próximas Evoluções (Fases 3-5)
 
 - Integração com Google Ads Keyword Planner (CPC real)
 - Detecção de anúncios ativos no SERP
