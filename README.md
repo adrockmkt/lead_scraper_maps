@@ -4,6 +4,11 @@ Este projeto é um **scraper técnico e educativo** para coleta estruturada de d
 
 Ele foi projetado para execução **local**, com controle de custo, cache em SQLite e geração de dados estruturados para **análise estratégica**, não para envio automático de comunicações.
 
+> Para uso em proposta comercial, consulte também:
+> - [DESCRITIVO_COMERCIAL.md](DESCRITIVO_COMERCIAL.md): explicação do projeto em linguagem comercial.
+> - [ESCOPO_ENTREGA_EXCEL.md](ESCOPO_ENTREGA_EXCEL.md): o que ainda precisa evoluir para entregar planilha Excel por categorias e cidades.
+> - [ROADMAP.md](ROADMAP.md): fases planejadas de evolução do projeto.
+
 ---
 
 ## 🎯 Objetivo do Projeto
@@ -56,6 +61,9 @@ lead_scraper_maps/
 ├── .env
 ├── .gitignore
 ├── README.md
+├── DESCRITIVO_COMERCIAL.md
+├── ESCOPO_ENTREGA_EXCEL.md
+├── ROADMAP.md
 ├── requirements.txt
 ├── main.py                      # Pipeline original
 ├── main_enhanced.py             # Pipeline otimizado (Fase 2)
@@ -186,6 +194,10 @@ Todos os arquivos são gerados incrementalmente em `outputs/`:
 - **leads_descartados.csv**
   - Fora do perfil estratégico
 
+### Observação sobre entrega em Excel
+
+Hoje o projeto gera arquivos **CSV**, que podem ser abertos no Excel. Para uma entrega comercial mais profissional em `.xlsx`, com abas por categoria/cidade, resumo executivo e formatação, consulte o documento [ESCOPO_ENTREGA_EXCEL.md](ESCOPO_ENTREGA_EXCEL.md).
+
 ---
 
 ## 🧠 Estratégia de Uso
@@ -279,11 +291,15 @@ A responsabilidade pelo uso da API, custos gerados e conformidade com os termos 
 
 ### 🔮 Próximas Evoluções (Fases 3-5)
 
+- Parametrização por cliente, cidade e categoria
+- Exportação em Excel (`.xlsx`) com abas e resumo
 - Integração com Google Ads Keyword Planner (CPC real)
 - Detecção de anúncios ativos no SERP
 - Clusterização avançada por renda
 - Exportação direta para CRMs
 - Execução automatizada (cron / servidor)
+
+Detalhamento completo em [ROADMAP.md](ROADMAP.md).
 
 ---
 

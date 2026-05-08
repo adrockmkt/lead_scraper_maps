@@ -4,6 +4,10 @@ Este documento descreve as **evoluções planejadas** para o projeto **Lead Scra
 
 O roadmap está organizado por **fases**, permitindo evolução incremental sem comprometer a estabilidade do pipeline atual.
 
+Documentos relacionados:
+- [DESCRITIVO_COMERCIAL.md](DESCRITIVO_COMERCIAL.md): visão comercial do projeto para apoiar proposta.
+- [ESCOPO_ENTREGA_EXCEL.md](ESCOPO_ENTREGA_EXCEL.md): escopo específico para transformar o projeto em uma entrega de planilha Excel por categorias e cidades.
+
 ---
 
 ## 🟢 Fase 1 — Consolidação do Pipeline Atual (Status: Concluída)
@@ -20,6 +24,8 @@ Entregas:
 - [x] Cache local em SQLite
 - [x] Exportação incremental em CSV
 - [x] README público-safe
+- [x] Descritivo comercial do projeto
+- [x] Escopo futuro para entrega em Excel
 - [x] .gitignore e governança de segredos
 
 ---
@@ -49,7 +55,27 @@ python main_enhanced.py --dry-run --nichos "dedetizadora,desentupidora" --limite
 
 ---
 
-## 🟠 Fase 3 — Enriquecimento de Inteligência de Mercado
+## 🟡 Fase 3 — Produto Comercial em Excel
+
+Objetivo: preparar o projeto para uma entrega comercial vendável, baseada em categorias e cidades definidas pelo cliente.
+
+Planejado:
+- [ ] Parametrização por cliente/projeto
+- [ ] Configuração externa de categorias, cidades e bairros
+- [ ] Suporte mais flexível a múltiplas cidades/estados
+- [ ] Exportação real em `.xlsx`
+- [ ] Abas por categoria ou cidade
+- [ ] Aba de resumo executivo
+- [ ] Organização de outputs por cliente e data
+- [ ] Inclusão de campos adicionais na entrega final: endereço, rating, quantidade de avaliações, query de origem e data da coleta
+- [ ] Relatório resumido da execução
+- [ ] Normalização de telefone e validação básica de emails
+
+Detalhamento desta fase: [ESCOPO_ENTREGA_EXCEL.md](ESCOPO_ENTREGA_EXCEL.md).
+
+---
+
+## 🟠 Fase 4 — Enriquecimento de Inteligência de Mercado
 
 Objetivo: elevar a qualidade analítica dos leads e do contexto competitivo.
 
@@ -61,7 +87,7 @@ Planejado:
 
 ---
 
-## 🔵 Fase 4 — Escalabilidade e Automação Controlada
+## 🔵 Fase 5 — Escalabilidade e Automação Controlada
 
 Objetivo: permitir execução recorrente sem perder controle operacional.
 
@@ -74,7 +100,7 @@ Planejado:
 
 ---
 
-## 🟣 Fase 5 — Integrações e Visualização
+## 🟣 Fase 6 — Integrações e Visualização
 
 Objetivo: facilitar análise e uso estratégico dos dados gerados.
 
@@ -93,6 +119,8 @@ Este projeto seguirá sempre os princípios:
 - Uso responsável de APIs e dados públicos
 - Evitar scraping agressivo ou massivo
 - Clareza entre uso técnico e uso comercial
+- Não prometer email ou telefone para 100% das empresas
+- Entregar dados encontrados em fontes públicas, com transparência sobre limitações
 
 ---
 
